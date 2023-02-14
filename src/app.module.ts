@@ -1,9 +1,11 @@
-import { Module } from '@nestjs/common';
+import { INestApplication, Module } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { MoviesModule } from './movies/movies.module';
 import { AuthModule } from './auth/auth.module';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { setupSwagger } from '../swagger';
 
 @Module({
   imports: [
@@ -25,4 +27,8 @@ import { AuthModule } from './auth/auth.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly app: INestApplication) {
+    setupSwagger(this.app);
+  }
+}
