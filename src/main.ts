@@ -7,8 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   const config = new DocumentBuilder()
-    .setTitle('API Teste MKS')
-    .setDescription('API para o teste técnico da MKS.')
+    .setTitle('API para uso de estudos')
+    .setDescription('Criada apenas para estudos.')
     .setVersion('1.0')
     .addBearerAuth(
       {

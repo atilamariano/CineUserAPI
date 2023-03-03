@@ -8,8 +8,8 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.useGlobalPipes(new common_1.ValidationPipe());
     const config = new swagger_1.DocumentBuilder()
-        .setTitle('API Teste MKS')
-        .setDescription('API para o teste técnico da MKS.')
+        .setTitle('API para uso de estudos')
+        .setDescription('Criada apenas para estudos.')
         .setVersion('1.0')
         .addBearerAuth({
         type: 'http',
