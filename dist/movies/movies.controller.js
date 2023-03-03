@@ -18,6 +18,7 @@ const movies_service_1 = require("./movies.service");
 const create_movie_dto_1 = require("./dto/create-movie.dto");
 const update_movie_dto_1 = require("./dto/update-movie.dto");
 const passport_1 = require("@nestjs/passport");
+const swagger_1 = require("@nestjs/swagger");
 let MoviesController = class MoviesController {
     constructor(moviesService) {
         this.moviesService = moviesService;
@@ -79,6 +80,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], MoviesController.prototype, "remove", null);
 MoviesController = __decorate([
+    (0, swagger_1.ApiTags)('Movies'),
     (0, common_1.Controller)('movies'),
     __metadata("design:paramtypes", [movies_service_1.MoviesService])
 ], MoviesController);
