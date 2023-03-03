@@ -14,7 +14,9 @@ import { UserService } from './user.service';
 import { handleException } from 'src/exceptions/exceptionsHelper';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('User')
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}

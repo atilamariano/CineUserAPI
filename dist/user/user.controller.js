@@ -20,6 +20,7 @@ const user_service_1 = require("./user.service");
 const exceptionsHelper_1 = require("../exceptions/exceptionsHelper");
 const common_2 = require("@nestjs/common");
 const passport_1 = require("@nestjs/passport");
+const swagger_1 = require("@nestjs/swagger");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
@@ -101,6 +102,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "deleteUserController", null);
 UserController = __decorate([
+    (0, swagger_1.ApiTags)('User'),
     (0, common_1.Controller)('user'),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], UserController);
