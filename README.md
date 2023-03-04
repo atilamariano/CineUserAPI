@@ -1,6 +1,8 @@
 # API utilizando NestJS, TypeORM e Token
 
-Este projeto é uma API desenvolvida utilizando as tecnologias **NestJS** e **TypeORM**, além de autenticação por token. A API foi criada para ser uma solução backend escalável e de fácil manutenção.
+Este projeto é uma API desenvolvida utilizando as tecnologias **NestJS** e **TypeORM**, além de autenticação por token. 
+
+A API foi criada para ser uma solução backend escalável e de fácil manutenção.
 
 ## Como utilizar
 
