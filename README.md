@@ -1,42 +1,134 @@
-# API de usuários e filmes
+# API utilizando NestJS, TypeORM e Token
 
-Este é um projeto de API para gerenciamento de usuários e filmes, construído com NestJS e TypeORM. A API oferece operações CRUD (criação, leitura, atualização e deleção) para ambas as entidades, permitindo que os usuários criem e editem suas listas de filmes favoritos.
+Este projeto é uma API desenvolvida utilizando as tecnologias **NestJS** e **TypeORM**, além de autenticação por token. A API foi criada para ser uma solução backend escalável e de fácil manutenção.
 
-## Como executar
+## Como utilizar
 
-### Para executar a API, siga as etapas abaixo:
+Para utilizar a API, siga as instruções abaixo:
 
-Clone este repositório em seu computador.
+1. Clone o repositório: `git clone https://github.com/atilamariano/CineUserAPI`
+2. Instale as dependências: `npm install`
+3. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente:
 
-Instale as dependências do projeto usando o comando: 'yarn'.
+```
+DATABASE_URL=
+DB_DATABASE=
+DB_HOST=
+DB_PASSWORD=
+DB_PORT=
+DB_USER=
+DB_CONNECTION=
+JWT_SECRET_KEY=
+```
 
-Configure a conexão com o banco de dados no arquivo: '.env'.
+4. Rode as migrações do banco de dados: `npm run typeorm migration:run`
+5. Inicie o servidor: `npm run start:dev`
 
-Execute as migrações do banco de dados usando o comando 'yarn migration:run'.
-
-Inicie o servidor com o comando 'yarn start'.
-
-A API estará disponível em http://localhost:3000/api.docs.
+Pronto! A API está funcionando e pronta para ser utilizada.
 
 ## Endpoints
 
-### A API oferece os seguintes endpoints:
+A API possui os seguintes endpoints:
 
-### Users
+### POST /auth/login
 
-GET /users: Retorna uma lista de todos os usuários cadastrados.
-GET /users/:id: Retorna um usuário específico pelo seu ID.
-POST /users: Cria um novo usuário.
-PUT /users/:id: Atualiza um usuário existente.
-DELETE /users/:id: Deleta um usuário existente.
+Realiza o login de um usuário.
 
-### Movies
+#### Parâmetros
 
-GET /movies: Retorna uma lista de todos os filmes cadastrados.
-GET /movies/:id: Retorna um filme específico pelo seu ID.
-POST /movies: Cria um novo filme.
-PUT /movies/:id: Atualiza um filme existente.
-DELETE /movies/:id: Deleta um filme existente.
+| Nome       | Tipo   | Descrição            |
+|------------|--------|----------------------|
+| email      | string | Email do usuário     |
+| password   | string | Senha do usuário      |
 
-### Contribuindo
-Se você quiser contribuir para este projeto, fique à vontade para fazer um fork e enviar um pull request. Todas as contribuições são bem-vindas!
+#### Resposta
+
+Caso as credenciais sejam válidas, a API retorna um token de autenticação:
+
+```json
+{
+  "token": "token_gerado_pela_api"
+}
+```
+
+Caso as credenciais sejam inválidas, a API retorna o seguinte erro:
+
+```json
+{
+  "statusCode": 401,
+  "message": "Unauthorized"
+}
+```
+
+### GET /users
+
+Retorna a lista de todos os usuários cadastrados.
+
+#### Resposta
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Fulano",
+    "email": "fulano@exemplo.com"
+  },
+  {
+    "id": 2,
+    "name": "Ciclano",
+    "email": "ciclano@exemplo.com"
+  }
+]
+```
+
+### GET /users/:id
+
+Retorna os dados de um usuário específico.
+
+#### Parâmetros
+
+| Nome | Tipo | Descrição          |
+|------|------|--------------------|
+| id   | int  | ID do usuário desejado |
+
+#### Resposta
+
+```json
+{
+  "id": 1,
+  "name": "Fulano",
+  "email": "fulano@exemplo.com"
+}
+```
+
+### POST /users
+
+Cadastra um novo usuário.
+
+#### Parâmetros
+
+| Nome     | Tipo   | Descrição           |
+|----------|--------|---------------------|
+| name     | string | Nome do usuário     |
+| email    | string | Email do usuário    |
+| password | string | Senha do usuário     |
+
+#### Resposta
+
+```json
+{
+  "id": 1,
+  "name": "Fulano",
+  "email": "fulano@exemplo.com"
+}
+```
+
+## Tecnologias utilizadas
+
+- NestJS
+- TypeORM
+- PostgreSQL
+- JWT
+
+
+### Projeto criado apenas para estudos,  Autor: Átila Mariano Dev.
