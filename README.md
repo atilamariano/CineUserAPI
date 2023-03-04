@@ -1,73 +1,37 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# API de usuários e filmes
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este é um projeto de API para gerenciamento de usuários e filmes, construído com NestJS e TypeORM. A API oferece operações CRUD (criação, leitura, atualização e deleção) para ambas as entidades, permitindo que os usuários criem e editem suas listas de filmes favoritos.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Como executar
 
-## Description
+### Para executar a API, siga as etapas abaixo:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Clone este repositório em seu computador.
+Instale as dependências do projeto usando o comando yarn.
+Configure a conexão com o banco de dados no arquivo ormconfig.json.
+Execute as migrações do banco de dados usando o comando yarn migration:run.
+Inicie o servidor com o comando yarn start.
+A API estará disponível em http://localhost:3000/api.docs.
 
-## Installation
+## Endpoints
 
-```bash
-$ npm install
-```
+### A API oferece os seguintes endpoints:
 
-## Running the app
+### Users
 
-```bash
-# development
-$ npm run start
+GET /users: Retorna uma lista de todos os usuários cadastrados.
+GET /users/:id: Retorna um usuário específico pelo seu ID.
+POST /users: Cria um novo usuário.
+PUT /users/:id: Atualiza um usuário existente.
+DELETE /users/:id: Deleta um usuário existente.
 
-# watch mode
-$ npm run start:dev
+### Movies
 
-# production mode
-$ npm run start:prod
-```
+GET /movies: Retorna uma lista de todos os filmes cadastrados.
+GET /movies/:id: Retorna um filme específico pelo seu ID.
+POST /movies: Cria um novo filme.
+PUT /movies/:id: Atualiza um filme existente.
+DELETE /movies/:id: Deleta um filme existente.
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+### Contribuindo
+Se você quiser contribuir para este projeto, fique à vontade para fazer um fork e enviar um pull request. Todas as contribuições são bem-vindas!
