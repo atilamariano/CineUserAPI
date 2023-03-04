@@ -7,10 +7,15 @@ Este é um projeto de API para gerenciamento de usuários e filmes, construído 
 ### Para executar a API, siga as etapas abaixo:
 
 Clone este repositório em seu computador.
-Instale as dependências do projeto usando o comando yarn.
-Configure a conexão com o banco de dados no arquivo ormconfig.json.
-Execute as migrações do banco de dados usando o comando yarn migration:run.
-Inicie o servidor com o comando yarn start.
+
+Instale as dependências do projeto usando o comando: 'yarn'.
+
+Configure a conexão com o banco de dados no arquivo: '.env'.
+
+Execute as migrações do banco de dados usando o comando 'yarn migration:run'.
+
+Inicie o servidor com o comando 'yarn start'.
+
 A API estará disponível em http://localhost:3000/api.docs.
 
 ## Endpoints
